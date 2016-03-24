@@ -84,7 +84,14 @@ public class Multiply {
 				}
 				newN3[i+a]=Integer.toString((Integer.parseInt(String.valueOf(newN3[i+a]))+
 					(Integer.parseInt(String.valueOf(newN1[i]))*Integer.parseInt(String.valueOf(newN2[a])))/10)%10).charAt(0);
-				System.out.println(String.valueOf(newN3));
+			}
+		}
+		for(int i=0;i<x;i++) {
+			if(newN3[i]=="0".charAt(0)) {
+				newN3[i]=" ".charAt(0);
+			}
+			else {
+				break;
 			}
 		}
 		System.out.println(String.valueOf(newN3));
