@@ -38,12 +38,12 @@ public class Multiply {
 				System.out.println("Please change another one,there must be something not belong to numbers.");
 				n2=input.next();
 			}
-		}
+		}//Integer Only
 		if(n1.length()<n2.length()) {
 			String n3=n1;
 			n1=n2;
 			n2=n3;
-		}
+		}//位數大對位數小
 		newN1 = new char[n1.length()];
 		for(int i=0;i<n1.length();i++)newN1[i] = n1.charAt(i);
 		newN2 = new char[n2.length()];
@@ -67,7 +67,7 @@ public class Multiply {
 							break;
 						}
 					}
-				}
+				}//乘起來後,個位數和原本就在N3的數相加,大於10就往前丟1
 				newN3[i+a+1]=Integer.toString((Integer.parseInt(String.valueOf(newN3[i+a+1]))+
 					(Integer.parseInt(String.valueOf(newN1[i]))*Integer.parseInt(String.valueOf(newN2[a])))%10)%10).charAt(0);
 				if(Integer.parseInt(String.valueOf(newN3[i+a]))+
@@ -81,10 +81,10 @@ public class Multiply {
 							break;
 						}
 					}
-				}
+				}//乘起來後,十位數和原本就在N3的數相加,大於10就往前丟1
 				newN3[i+a]=Integer.toString((Integer.parseInt(String.valueOf(newN3[i+a]))+
 					(Integer.parseInt(String.valueOf(newN1[i]))*Integer.parseInt(String.valueOf(newN2[a])))/10)%10).charAt(0);
-			}
+			}//我的想法:反正最多也就9*9=81，最多也就拆成兩個
 		}
 		for(int i=0;i<x;i++) {
 			if(newN3[i]=="0".charAt(0)) {
